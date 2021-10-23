@@ -6,24 +6,21 @@ import de.flashyboi.gamellounge.specialeventcommand.SpecialEventCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-import org.jetbrains.annotations.NotNull;
+
 
 public class SendPlayerToServer {
 
     public FileConfiguration config = SpecialEventCommand.getPlugin().getConfig();
 
-    public static String player;
-    public static String server;
-    private String failmessage = config.getString("server_not_online_message");
-    ByteArrayDataOutput outStream = ByteStreams.newDataOutput();
+    private final String failmessage = config.getString("server_not_online_message");
     SpecialEventCommand plugin = SpecialEventCommand.getPlugin();
 
     public void sendPlayer(Player player, String server) {
+        ByteArrayDataOutput out = ByteStreams.newDataOutput();
         try {
-            outStream.writeUTF("Connect");
-            outStream.writeUTF(server);
-            player.sendPluginMessage(plugin, "bungeecord:main", outStream.toByteArray());
+            out.writeUTF("Connect");
+            out.writeUTF(server);
+            player.sendPluginMessage(plugin, "BungeeCord", out.toByteArray());
             player.sendMessage("Verbinden zu...");
         } catch(NullPointerException | IllegalArgumentException e) {
             player.sendMessage(ChatColor.RED + failmessage);

@@ -21,7 +21,7 @@ public final class SpecialEventCommand extends JavaPlugin {
         ConfigInit();
         log().info("Config loaded!");
         log().info("Loading BungeeCord Bridge..");
-        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "bungeecord:main");
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         log().info("BungeeCord Bridge loaded!");
         log().info("Loading Commands..");
         this.getCommand("event").setExecutor(new EventCommand());
@@ -32,7 +32,7 @@ public final class SpecialEventCommand extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         log().info("Unloading BungeeCord Bridge..");
-        this.getServer().getMessenger().unregisterOutgoingPluginChannel(this, "bungeecord:main");
+        this.getServer().getMessenger().unregisterOutgoingPluginChannel(this, "BungeeCord");
         log().info("Unloaded BungeeCord Bridge!");
     }
 
