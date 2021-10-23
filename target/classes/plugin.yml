@@ -1,8 +1,0 @@
-name: SpecialEventCommand
-version: '1.0-SNAPSHOT'
-main: de.flashyboi.gamellounge.specialeventcommand.SpecialEventCommand
-api-version: 1.17
-authors: [ flash_btw ]
-website: http://discord.gammellounge.de/
-commands:
-  event:

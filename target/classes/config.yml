@@ -1,5 +1,0 @@
-#The name of the server players should get to when executing /event
-server_name: "event"
-
-#The message that a player should get when the event server is down
-server_not_online_message: "There is no event happening right now :("
