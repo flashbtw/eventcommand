@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 =======
 # User-specific stuff
-.idea/
+*.idea/
 
 *.iml
 *.ipr
